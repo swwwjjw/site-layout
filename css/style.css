@@ -1,0 +1,326 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Шапка сайта */
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #dfe3ea;
+}
+
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    background: #3157a4;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 6px;
+    color: #333;
+}
+
+nav a:hover,
+nav a.active {
+    background: #3157a4;
+    color: white;
+}
+
+/* Главный блок */
+.hero {
+    background: #3157a4;
+    color: white;
+    padding: 75px 0;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin: 0 0 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin: 0 0 25px;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background: white;
+    color: #3157a4;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+/* Общие секции */
+section {
+    padding: 55px 0;
+}
+
+.section-title {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 30px;
+}
+
+.section-description {
+    max-width: 760px;
+    margin-top: 0;
+    color: #666;
+}
+
+/* Карточки */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 28px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e1e5eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #666;
+}
+
+.card-link {
+    color: #3157a4;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Статья */
+.article {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e1e5eb;
+    margin-top: 25px;
+}
+
+.article h2 {
+    margin-top: 0;
+}
+
+.article img {
+    max-width: 100%;
+    display: block;
+    border-radius: 7px;
+    margin: 22px auto;
+}
+
+.article figure {
+    margin: 25px 0;
+}
+
+.article figcaption {
+    color: #777;
+    font-size: 14px;
+    margin-top: 7px;
+    text-align: center;
+}
+
+/* Блок с двумя колонками */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.two-columns img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Список заданий */
+.task-list {
+    display: grid;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.task {
+    background: white;
+    border: 1px solid #e1e5eb;
+    border-left: 5px solid #3157a4;
+    padding: 22px;
+    border-radius: 6px;
+}
+
+.task h3 {
+    margin: 0 0 8px;
+}
+
+.task p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Информационные блоки */
+.info-box {
+    background: #eaf0fb;
+    padding: 22px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.info-box h3 {
+    margin-top: 0;
+}
+
+/* Подвал */
+footer {
+    background: #202735;
+    color: #e3e6eb;
+    padding: 32px 0;
+    margin-top: 20px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.small {
+    color: #aeb5c0;
+    font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 800px) {
+    .header-inner {
+        padding: 15px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .cards,
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 94%;
+    }
+
+    .hero {
+        padding: 55px 0;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .article {
+        padding: 20px;
+    }
+}
+

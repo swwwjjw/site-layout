@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect width="1000" height="650" fill="#eaf0fb"/>
+<rect x="55" y="55" width="890" height="540" rx="24" fill="#ffffff" stroke="#d8deea" stroke-width="4"/>
+<circle cx="150" cy="145" r="55" fill="#3157a4"/>
+<text x="150" y="162" text-anchor="middle" font-family="Arial" font-size="52" font-weight="bold" fill="#ffffff">S</text>
+<rect x="260" y="105" width="500" height="26" rx="13" fill="#d9e2f5"/>
+<rect x="260" y="150" width="350" height="18" rx="9" fill="#edf1f7"/>
+<rect x="120" y="250" width="760" height="8" rx="4" fill="#edf1f7"/>
+<rect x="120" y="300" width="330" height="150" rx="14" fill="#3157a4"/>
+<rect x="475" y="300" width="180" height="150" rx="14" fill="#dfe7f6"/>
+<rect x="680" y="300" width="200" height="150" rx="14" fill="#eef2f8"/>
+<text x="120" y="520" font-family="Arial" font-size="42" font-weight="bold" fill="#202735">Проект</text>
+<text x="120" y="565" font-family="Arial" font-size="25" fill="#5f6877">Курсовая работа</text>
+</svg>
