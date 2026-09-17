@@ -1,0 +1,359 @@
+/* Базовый контейнер: 20em * 10px = 200px */
+.pic-container {
+    font-size: 10px; /* 1em = 10px */
+    width: 20em;     /* 200px */
+    height: 20em;    /* 200px */
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border: 0.2em solid #cccccc;
+    box-shadow: 0 0.5em 1em rgba(0,0,0,0.1);
+}
+
+/* Ветка с листьями */ 
+.branch {
+    position: absolute;
+    border: 0.4em solid #6b3e2e;
+    border-bottom: none;
+    border-left: none;
+    border-radius: 50% 50% 0 0;
+    z-index: 1;
+    width: 8em;
+    height: 5em;
+    right: -2em;
+    top: 1em;
+    transform: rotate(-20deg);
+}
+
+.leaf {
+    position: absolute;
+    background-color: #6cdb2b;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.leaf1 {
+    top: 0.4em;
+    right: 4.5em;
+    width: 6em;
+    height: 1.2em;
+    transform: rotate(30deg);
+}
+
+.leaf2 {
+    top: 3.4em;
+    right: 1em;
+    width: 4em;
+    height: 1em;
+    transform: rotate(75deg);
+}
+
+.leaf3 {
+    top: 0em;
+    right: 2em;
+    width: 2em;
+    height: 0.8em;
+    transform: rotate(60deg);
+}
+
+/* Трава */
+.stem {
+    position: absolute;
+    border: 0.4em solid #6cdb2b;
+    border-bottom: none;
+    border-top: none;
+    border-radius: 50% 50% 0 0;
+    z-index: 1;
+}
+
+.stem1 {
+    bottom: 3.5em;
+    right: 3em;
+    width: 4em;
+    height: 5em;
+    border-right: none;
+}
+
+.stem2 {
+    bottom: 3.5em;
+    right: 1em;
+    width: 3.5em;
+    height: 4.5em;
+    border-right: none;
+}
+
+.stem3 {
+    bottom: 3.5em;
+    right: 3em;
+    width: 3.5em;
+    height: 6em;
+    border-left: none;
+    border-color: #5cbd23;
+}
+
+.stem4 {
+    bottom: 3.5em;
+    right: 4.5em;
+    width: 3.5em;
+    height: 3em;
+    border-left: none;
+}
+/* Платформа */
+.platform {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3.5em;
+    background: repeating-linear-gradient(
+        90deg,
+        #fcd02c,
+        #fcd02c 1.2em,
+        #fef08a 1.2em,
+        #fef08a 2.4em
+    );
+    z-index: 2;
+}
+
+/* Динозавр */
+.dino {
+    position: absolute;
+    bottom: 3.5em;
+    left: -1em;
+    width: 12em;
+    height: 12em;
+    z-index: 3;
+}
+
+/* Хвост */
+.tail {
+    position: absolute;
+    bottom: 3em;
+    left: 1em;
+    width: 7em;
+    height: 7em;
+    border: 1em solid #73b82b;
+    border-radius: 50% 50% 0 0;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    transform: rotate(-115deg);
+}
+
+/* Лапы */
+.leg-front {
+    position: absolute;
+    bottom: 0;
+    left: 6.5em;
+    width: 1.5em;
+    height: 3.5em;
+    background-color: #73b82b;
+    border-radius: 1em 1em 0.5em 0.5em;
+    transform: rotate(15deg);
+}
+
+.leg-front::after {
+    content: '';
+    position: absolute;
+    bottom: -1em;
+    left: 0em;
+    width: 3em;
+    height: 2em;
+    background-color: #73b82b;
+    background: radial-gradient(circle at 100% 35%, #c9e89d, #73b82b);
+    border-radius: 50%;
+    clip-path: inset(0 0 50% 0);
+}
+
+.leg-back {
+    position: absolute;
+    bottom: 0;
+    left: 4em;
+    width: 1.5em;
+    height: 3.5em;
+    background-color: #73b82b;
+    border-radius: 1em 1em 0.5em 0.5em;
+    transform: rotate(15deg);
+}
+
+.leg-back::after {
+    content: '';
+    position: absolute;
+    bottom: -1em;
+    left: 0em;
+    width: 3em;
+    height: 2em;
+    background-color: #73b82b;
+    background: radial-gradient(circle at 100% 35%, #c9e89d, #73b82b);
+    border-radius: 50%;
+    clip-path: inset(0 0 50% 0);
+}
+
+/* Тело */
+.body {
+    position: absolute;
+    bottom: 1.5em;
+    left: 2.5em;
+    width: 9em;
+    height: 6.5em;
+    background: radial-gradient(circle at 35% 35%, #c9e89d, #73b82b);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Руки */
+.arm-front {
+    position: absolute;
+    bottom: 4.5em;
+    left: 9em;
+    width: 3em;
+    height: 1.2em;
+    background-color: #73b82b;
+    border-radius: 1em;
+    transform: rotate(10deg);
+    z-index: 4;
+}
+
+.arm-front::after {
+    content: '';
+    position: absolute;
+    bottom: -0.8em;
+    left: 2em;
+    width: 1.3em;
+    height: 2em;
+    background-color: #73b82b;
+    border-radius: 50%;
+    transform: rotate(-20deg);
+}
+
+.arm-back {
+    position: absolute;
+    bottom: 4.5em;
+    left: 10em;
+    width: 3em;
+    height: 1.2em;
+    background-color: #5b9221;
+    border-radius: 1em;
+    transform: rotate(10deg);
+    z-index: 2;
+}
+
+.arm-back::after {
+    content: '';
+    position: absolute;
+    bottom: -0.8em;
+    left: 2em;
+    width: 1.3em;
+    height: 2em;
+    background-color: #5b9221;
+    border-radius: 50%;
+    transform: rotate(-20deg);
+}
+
+/* Шея */
+.neck {
+    position: absolute;
+    bottom: 8em;
+    left: 6em;
+    width: 6em;
+    height: 2.5em;
+    background-color: #73b82b;
+    border-radius: 1em;
+    transform: rotate(-60deg);
+    z-index: 1;
+}
+
+/* Голова */
+.head {
+    position: absolute;
+    bottom: 8em;
+    left: 8em;
+    width: 6em;
+    height: 4.5em;
+    background-color: #73b82b;
+    border-radius: 50%;
+    transform: rotate(20deg);
+    z-index: 4;
+}
+
+/* Усики */
+.antenna {
+    position: absolute;
+    bottom: 12em;
+    width: 0.2em;
+    height: 1.5em;
+    background-color: #73b82b;
+    transform-origin: bottom;
+    z-index: 4;
+}
+
+.antenna-left {
+    left: 9.5em;
+    transform: rotate(-15deg);
+}
+
+.antenna-right {
+    left: 10.5em;
+    transform: rotate(10deg);
+}
+
+/* Глаза */
+.eye {
+    position: absolute;
+    bottom: 10em;
+    width: 1.2em;
+    height: 1.5em;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 0.15em solid #333;
+    z-index: 5;
+}
+
+.eye-left {
+    left: 9em;
+}
+
+.eye-right {
+    left: 10.5em;
+}
+
+.pupil {
+    position: absolute;
+    bottom: 0.2em;
+    left: 0.4em;
+    width: 0.5em;
+    height: 0.6em;
+    background-color: #000000;
+    border-radius: 50%;
+}
+
+/* Зубы */
+.teeth {
+    position: absolute;
+    bottom: 8em;
+    left: 11em;
+    width: 1.5em;
+    height: 0.8em;
+    background-color: #fcd02c;
+    border-radius: 0 0 0.5em 0.5em;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 60% 0, 40% 100%, 20% 0, 0 100%);
+    z-index: 6;
+}
+
+/* Ноздри */
+.nostril {
+    position: absolute;
+    bottom: 9.5em;
+    width: 0.3em;
+    height: 0.5em;
+    background-color: #000000;
+    border-radius: 50%;
+    z-index: 6;
+}
+
+.nostril-left {
+    left: 12em;
+}
+
+.nostril-right {
+    left: 12.8em;
+}
