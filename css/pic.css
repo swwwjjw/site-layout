@@ -159,7 +159,7 @@
     width: 3em;
     height: 2em;
     background-color: #73b82b;
-    background: radial-gradient(circle at 100% 35%, #c9e89d, #73b82b);
+    background: radial-gradient(circle at 100% 50%, #c9e89d, #73b82b);
     border-radius: 50%;
     clip-path: inset(0 0 50% 0);
 }
@@ -183,7 +183,7 @@
     width: 3em;
     height: 2em;
     background-color: #73b82b;
-    background: radial-gradient(circle at 100% 35%, #c9e89d, #73b82b);
+    background: radial-gradient(circle at 100% 50%, #c9e89d, #73b82b);
     border-radius: 50%;
     clip-path: inset(0 0 50% 0);
 }
