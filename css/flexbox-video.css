@@ -1,0 +1,156 @@
+.toggle-input {
+  display: none;
+}
+
+.video-container {
+  font-size: 10px;
+  width: 20em;
+  height: 20em;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.4em;
+  cursor: pointer;
+  user-select: none;
+  background: radial-gradient(circle at 35% 35%, #ffaafc, #fb00ff);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1em;
+  filter: sepia(0);
+  transition: filter 1s;
+}
+
+.prince1, .frog, .princess {
+  font-size: 4.6em;
+  line-height: 1;
+}
+
+.prince1 {
+    position: absolute;
+    left: 0em;
+    bottom: -1em;
+    opacity: 1;
+    transform: scale(0.6);
+}
+
+.prince2 {
+  position: absolute;
+  left: -0.8em;
+  bottom: -4.5em;
+  opacity: 0;    
+  transform: scale(0.6);
+  pointer-events: none;
+}
+
+.prince3 {
+  position: absolute;
+  left: 3.7em;
+  bottom: 10.2em;
+  opacity: 0;        
+  transform: scale(0.6);
+  pointer-events: none;
+  transform-origin: center;
+}
+
+
+.frog {
+  position: absolute;
+  left: 0.8em;
+  bottom: 0em;
+  opacity: 1;
+  transform: translateX(3em) scale(0.4);
+  z-index: 3;
+  transition: transform 1s cubic-bezier(0.34, 1.2, 0.5, 1), opacity 1s ease;
+}
+
+
+.princess {
+  position: absolute;
+  left: 2.5em;
+  bottom: 0em;
+  opacity: 0;
+  transform: scale(0.9);
+  transform-origin: bottom left;
+  transition: opacity 1s ease 0.5s;
+}
+
+
+.text {
+  position: absolute;
+  top: 1em;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #2e7d32;
+  letter-spacing: 0.05em;
+  opacity: 1;
+  transform: translateY(-3em);
+  z-index: 3;
+  transition: transform 0.4s ease;
+}
+
+.text-default { display: inline; }
+
+.text-clicked { display: none; }
+
+
+.video-container:hover .frog {
+  transform: translateX(2em) scale(0.8);
+}
+
+.video-container:hover .text {
+  transform: translateY(0);
+}
+
+.video-container .prince1:hover {
+  opacity: 0;
+  transition: none;
+}
+
+.video-container .prince1:hover ~ .prince2 {
+  opacity: 1;
+  transition: none;
+}
+
+.video-container .prince1:hover ~ .prince3 {
+  opacity: 1;
+  transition: none;
+  animation: shake-head 0.6s ease-in-out infinite;
+}
+
+@keyframes shake-head {
+  0%, 100% { transform: scale(0.6) rotate(0); }
+  25%      { transform: scale(0.6) rotate(-12deg); }
+  75%      { transform: scale(0.6) rotate(12deg); }
+}
+
+.video-container:hover .frog:hover {
+  animation: frog-jump 0.5s ease-in-out infinite;
+}
+@keyframes frog-jump {
+  0%, 100% { transform: translateX(2em) scale(0.8) translateY(0); }
+  50%      { transform: translateX(2em) scale(0.8) translateY(-1em); }
+}
+
+
+.toggle-input:checked + .video-container {
+  filter: sepia(1);
+}
+
+.toggle-input:checked + .video-container .frog {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggle-input:checked + .video-container .princess {
+  opacity: 1;
+  transform: scale(0.9);
+}
+
+.toggle-input:checked + .video-container .text {
+  transform: translateY(0);
+}
+
+.toggle-input:checked + .video-container .text-default { display: none; }
+.toggle-input:checked + .video-container .text-clicked { display: inline; }

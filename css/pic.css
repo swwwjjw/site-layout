@@ -1,8 +1,8 @@
-/* Базовый контейнер: 20em * 10px = 200px */
+/* Базовый контейнер */
 .pic-container {
     font-size: 10px; /* 1em = 10px */
-    width: 20em;     /* 200px */
-    height: 20em;    /* 200px */
+    width: 20em;  
+    height: 20em; 
     background-color: #ffffff;
     position: relative;
     overflow: hidden;
