@@ -26,26 +26,26 @@
 
 .prince1 {
     position: absolute;
-    left: 0em;
-    bottom: -4.6em;
-    transform: scale(0.6);
+    left: 2em;
+    bottom: 0em;
+    width: 7em;
 }
 
 .prince2 {
   position: absolute;
-  left: -0.8em;
-  bottom: -4.5em;
-  opacity: 0;    
-  transform: scale(0.6);
+  left: 1.5em;
+  bottom: 0em;
+  opacity: 0;
+  width: 7.9em;    
   pointer-events: none;
 }
 
 .prince3 {
   position: absolute;
-  left: 3.7em;
-  bottom: 10.2em;
-  opacity: 0;        
-  transform: scale(0.6);
+  left: 2em;
+  bottom: 10.5em;
+  opacity: 0;
+  width: 7.5em;        
   pointer-events: none;
   transform-origin: center;
 }
@@ -55,7 +55,8 @@
   position: absolute;
   left: 17em;
   bottom: 2em;
-  transform: translateX(3em) scale(1);
+  width: 4em;
+  transform: translateX(3em);
   z-index: 3;
   transition: transform 1s cubic-bezier(0.34, 1.2, 0.5, 1), opacity 1s ease;
 }
@@ -63,10 +64,10 @@
 
 .princess {
   position: absolute;
-  left: 8em;
-  bottom: -3em;
+  left: 12em;
+  bottom: 3em;
   opacity: 0;
-  transform: scale(0.2);
+  width: 6em;
   pointer-events: none;
   transform-origin: center;
   transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s, opacity 1s ease 0.5s;
@@ -93,7 +94,7 @@
 
 
 .video-container:hover .frog {
-  transform: translateX(-3em) scale(1.5);
+  transform: translateX(-3em);
 }
 
 .video-container:hover .text {
@@ -123,8 +124,8 @@
   animation: frog-jump 0.5s ease-in-out infinite;
 }
 @keyframes frog-jump {
-  0%, 100% { transform: translateX(-3em) translateY(0) scale(1.5); }
-  50%      { transform: translateX(-3em) translateY(-1em) scale(1.5); }
+  0%, 100% { transform: translateX(-3em) translateY(0); }
+  50%      { transform: translateX(-3em) translateY(-1em); }
 }
 
 
@@ -139,7 +140,7 @@
 
 .toggle-input:checked + .video-container .princess {
   opacity: 1;
-  transform: scale(0.7);
+  transform: scale(1.5);
 }
 
 .toggle-input:checked + .video-container .text {
