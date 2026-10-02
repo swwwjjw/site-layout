@@ -42,10 +42,10 @@
 
 .prince3 {
   position: absolute;
-  left: 2em;
-  bottom: 10.5em;
+  left: 4.5em;
+  bottom: 11.5em;
   opacity: 0;
-  width: 7.5em;        
+  width: 3em;        
   pointer-events: none;
   transform-origin: center;
 }
@@ -115,9 +115,9 @@
 }
 
 @keyframes shake-head {
-  0%, 100% { transform: scale(0.6) rotate(0); }
-  25%      { transform: scale(0.6) rotate(-12deg); }
-  75%      { transform: scale(0.6) rotate(12deg); }
+  0%, 100% { transform: rotate(0); }
+  25%      { transform: rotate(-12deg); }
+  75%      { transform: rotate(12deg); }
 }
 
 .video-container:hover .frog:hover {
