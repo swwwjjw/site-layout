@@ -1,32 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тест по грамотности</title>
+    <title>Практическая работа №4. Тест по грамотности</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dom-test.css">
     <script src="scripts/dom-test.js" defer></script>
 </head>
-    <body>
-        <header class="page-header">
-        <h1>Викторина «Грамотность»</h1>
-        <p class="page-subtitle">В каждом вопросе выберите один ответ</p>
-        <p class="progress" id="progress">Отвечено: 0 из 0</p>
-        </header>
+<body>
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">
+            <span class="logo-line"></span>
+            <span class="logo-line logo-line--short"></span>
+            <span class="logo-line logo-line--long"></span>
+            <span class="logo-last-row">
+            <span class="logo-line logo-line--medium"></span>
+            <span class="logo-dot"></span>
+            </span>
+        </span>
 
-        <main class="wrapper">
+        <span class="logo-text">Tasks Hub</span>
+        </a>
+        <nav>
+            <a class="active" href="index.html">Главная</a>
+            <a class="" href="tasks.html">Задания</a>
+            <a class="" href="about.html">О сайте</a>
+        </nav>
+    </div>
+</header>
+<main>
+    <section>
+        <div class="container">
+            <a class="back-link" href="tasks.html">← Вернуться к заданиям</a>
+            <h1 class="section-title">Практическая работа №4. Тест по грамотности</h1>
+            <p class="section-description">Создание DOM-теста.</p>
+            <div class="article">
+                <h2>Задание</h2>
+                <p>Создать DOM-тест на грамотность, используя JavaScript.</p>
+                <h2>Результат</h2>
+                <body>
+                <header class="page-header">
+                <h1>Викторина «Грамотность»</h1>
+                <p class="page-subtitle">В каждом вопросе выберите один ответ</p>
+                <p class="progress" id="progress">Отвечено: 0 из 0</p>
+                </header>
 
-        <!-- Плашка «Вопросы закончились» + статистика — НАД областью добавления -->
-        <section class="finish" id="finish" hidden>
-            <h2 class="finish__title">Вопросы закончились</h2>
-            <p class="finish__stats" id="stats"></p>
-            <p class="finish__hint">Нажмите на карточку вопроса, чтобы увидеть правильный ответ</p>
-        </section>
+                <main class="wrapper">
 
-        <!-- ОБЛАСТЬ ДЛЯ ДИНАМИЧЕСКОГО ДОБАВЛЕНИЯ ЭЛЕМЕНТОВ -->
-        <section class="quiz" id="quiz"></section>
+                <!-- Плашка «Вопросы закончились» + статистика — НАД областью добавления -->
+                <section class="finish" id="finish" hidden>
+                    <h2 class="finish__title">Вопросы закончились</h2>
+                    <p class="finish__stats" id="stats"></p>
+                    <p class="finish__hint">Нажмите на карточку вопроса, чтобы увидеть правильный ответ</p>
+                </section>
 
-        </main>
-    </body>
+                <!-- ОБЛАСТЬ ДЛЯ ДИНАМИЧЕСКОГО ДОБАВЛЕНИЯ ЭЛЕМЕНТОВ -->
+                <section class="quiz" id="quiz"></section>
+
+                </main>
+            </body>
+                <p>Итогом работы является DOM-тест.</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="container footer-inner">
+        <div><strong>Tasks Hub</strong><p class="small">Учебный сайт студента</p></div>
+        <div><p>Практические задания и проекты.</p><p class="small">© 2026 Tasks Hub</p></div>
+    </div>
+</footer>
+</body>
 </html>
