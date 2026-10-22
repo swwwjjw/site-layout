@@ -1,0 +1,267 @@
+/* ================= ПАЛИТРА САЙТА ================= */
+:root {
+  --bg:           #f4f6fa;
+  --card:         #ffffff;
+  --ink:          #222;
+  --muted:        #666;
+  --border:       #e1e5eb;
+  --accent:       #3157a4;
+  --accent-soft:  #eaf0fb;
+  --accent-hover: #d6e2f5;
+  --ok:           #2e7d32;
+  --ok-soft:      #e8f5e9;
+  --ok-border:    #a5d6a7;
+  --bad:          #c62828;
+  --bad-soft:     #fdecea;
+  --bad-border:   #f5b7b3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ================= ШАПКА ================= */
+.page-header {
+  background: var(--accent);
+  color: #fff;
+  padding: 45px max(5%, calc((100% - 990px) / 2)) 40px;
+}
+h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
+.page-subtitle { margin: 0 0 14px; font-size: 17px; opacity: 0.9; }
+.progress {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ================= КОНТЕЙНЕР ================= */
+.wrapper {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0 55px;
+}
+
+/* ================= ПЛАШКА ФИНАЛА ================= */
+.finish {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 22px;
+  margin-bottom: 28px;
+  animation: dropIn 0.35s ease;
+}
+.finish[hidden] { display: none; }
+.finish__title { margin: 0 0 8px; font-size: 22px; color: var(--accent); }
+.finish__stats { margin: 0 0 6px; font-size: 16px; font-weight: bold; }
+.finish__hint  { margin: 0; color: var(--muted); font-size: 14px; }
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= РЯД ВОПРОСОВ ================= */
+.quiz {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+/* ================= КАРТОЧКА ВОПРОСА ================= */
+.question {
+  display: none;              /* скрыта, пока не выдана */
+  flex: 1 1 320px;
+  max-width: 460px;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 20px 90px;
+  transition: border-color 0.25s ease;
+}
+.question--visible {
+  display: flex;
+  animation: cardIn 0.4s ease;
+}
+.question--ok  { border-color: var(--ok-border); }
+.question--bad { border-color: var(--bad-border); }
+
+.quiz--finished .question { cursor: pointer; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- шапка карточки --- */
+.question__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.question__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+}
+.question__mark {
+  margin-left: auto;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.3) rotate(-30deg);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.question__mark--ok  { color: var(--ok);  opacity: 1; transform: scale(1) rotate(0); }
+.question__mark--bad { color: var(--bad); opacity: 1; transform: scale(1) rotate(0); }
+
+.question__text {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* ================= ОТВЕТЫ ================= */
+.question__answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.answer {
+  position: relative;
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: left;
+  color: var(--ink);
+  background: var(--accent-soft);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  max-height: 160px;
+  transition: background-color 0.2s ease,
+              border-color    0.2s ease,
+              transform       0.6s  ease,
+              opacity         0.5s  ease,
+              max-height      0.5s  ease,
+              padding         0.4s  ease;
+}
+.answer:hover { background: var(--accent-hover); }
+.answer:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.answer--selected { border-color: var(--accent); }
+.answer--wrong {
+  background: var(--bad-soft);
+  border-color: var(--bad);
+}
+.answer--open {
+  max-height: 620px;
+  padding: 18px 16px;
+  font-size: 15px;
+  background: var(--ok-soft);
+  border-color: var(--ok);
+  transform: scale(1.02);
+}
+.answer__exp {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  font-size: 14px;
+  color: #2e5d3a;
+  transition: max-height 0.45s ease, opacity 0.4s ease,
+              margin-top 0.4s ease, padding-top 0.4s ease;
+}
+.answer--open .answer__exp {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--ok-border);
+}
+.answer--down {
+  transform: translateY(64px);
+  opacity: 0.55;
+}
+.answer--gone {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+/* ================= БЛОК «ПРАВИЛЬНЫЙ ОТВЕТ» ================= */
+.reveal {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 16px;
+  margin-bottom: 0;
+  background: var(--accent-soft);
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  transition: max-height 0.5s ease, opacity 0.4s ease,
+              padding 0.5s ease, margin-bottom 0.5s ease;
+}
+.reveal--open {
+  max-height: 600px;
+  opacity: 1;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.reveal__label {
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.reveal__text { margin-bottom: 6px; font-weight: bold; }
+.reveal__exp  { color: #444; }
+
+/* ================= АДАПТИВНОСТЬ ================= */
+@media (max-width: 900px) {
+  .question { flex: 1 1 45%; }
+}
+@media (max-width: 800px) {
+  h1 { font-size: 32px; }
+  .page-header { padding: 38px 5% 32px; }
+}
+@media (max-width: 720px) {
+  .question { flex: 1 1 100%; max-width: none; }
+  h1 { font-size: 28px; }
+  .page-subtitle { font-size: 15px; }
+}

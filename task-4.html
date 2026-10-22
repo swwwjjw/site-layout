@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по грамотности</title>
+    <link rel="stylesheet" href="css/dom-test.css">
+    <script src="scripts/dom-test.js" defer></script>
+</head>
+    <body>
+        <header class="page-header">
+        <h1>Викторина «Грамотность»</h1>
+        <p class="page-subtitle">В каждом вопросе выберите один ответ</p>
+        <p class="progress" id="progress">Отвечено: 0 из 0</p>
+        </header>
+
+        <main class="wrapper">
+
+        <!-- Плашка «Вопросы закончились» + статистика — НАД областью добавления -->
+        <section class="finish" id="finish" hidden>
+            <h2 class="finish__title">Вопросы закончились</h2>
+            <p class="finish__stats" id="stats"></p>
+            <p class="finish__hint">Нажмите на карточку вопроса, чтобы увидеть правильный ответ</p>
+        </section>
+
+        <!-- ОБЛАСТЬ ДЛЯ ДИНАМИЧЕСКОГО ДОБАВЛЕНИЯ ЭЛЕМЕНТОВ -->
+        <section class="quiz" id="quiz"></section>
+
+        </main>
+    </body>
+</html>
