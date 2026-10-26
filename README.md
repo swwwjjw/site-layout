@@ -1,4 +1,4 @@
-# Student Hub
+# Tasks Hub
 
 Простой учебный многостраничный сайт на HTML и CSS.
 
