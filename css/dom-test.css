@@ -81,7 +81,7 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
 
 /* ================= КАРТОЧКА ВОПРОСА ================= */
 .question {
-  display: none;              /* скрыта, пока не выдана */
+  display: none;
   flex: 1 1 320px;
   max-width: 460px;
   flex-direction: column;
