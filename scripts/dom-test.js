@@ -198,17 +198,18 @@ function chooseAnswer(card, btn) {
     const moving = isCorrect
       ? allAnswers.filter(a => a !== btn)
       : allAnswers;
-
-    moving.forEach((answer, i) => {
-      setTimeout(() => answer.classList.add('answer--down'), i * 250);
-    });
-
-    const totalDelay = moving.length * 250 + 400;
-
+    
     setTimeout(() => {
-      if (isCorrect) btn.classList.add('answer--gone');
-      finishQuestion(isCorrect);
-    }, totalDelay + (isCorrect ? 600 : 0));
+      moving.forEach((answer, i) => {
+      setTimeout(() => answer.classList.add('answer--down'), i * 250);
+      });
+    }, 1000);
+    
+    // Если попросят поменять местами скрытие правильного ответа и смещение неправильных
+    // const totalDelay = moving.length * 250 + 400;
+
+    if (isCorrect) btn.classList.add('answer--gone');
+    finishQuestion(isCorrect);
 
   }, 1200);
 }

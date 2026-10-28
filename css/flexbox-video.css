@@ -13,8 +13,6 @@
   user-select: none;
   background: radial-gradient(circle at 35% 35%, #ffaafc, #fb00ff);
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
   padding: 1em;
   filter: sepia(0);
   transition: filter 1s;
