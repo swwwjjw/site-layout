@@ -1,8 +1,5 @@
 'use strict';
 
-/* =========================================================
-   1. ДАННЫЕ
-   ========================================================= */
 const QUESTIONS = [
   {
     text: 'А голос у него был не такой, как у почтальона Печкина, дохленький. ' +
@@ -59,9 +56,6 @@ const QUESTIONS = [
   }
 ];
 
-/* =========================================================
-   2. СОСТОЯНИЕ
-   ========================================================= */
 const state = {
   total: 0,
   answered: 0,
@@ -72,17 +66,11 @@ const state = {
   cards: []
 };
 
-/* =========================================================
-   3. DOM-ССЫЛКИ
-   ========================================================= */
 const quizEl     = document.getElementById('quiz');
 const finishEl   = document.getElementById('finish');
 const statsEl    = document.getElementById('stats');
 const progressEl = document.getElementById('progress');
 
-/* =========================================================
-   4. ПЕРЕМЕШИВАНИЕ
-   ========================================================= */
 function shuffle(array) {
   const copy = array.slice();
   for (let i = copy.length - 1; i > 0; i--) {
@@ -92,9 +80,6 @@ function shuffle(array) {
   return copy;
 }
 
-/* =========================================================
-   5. СОЗДАНИЕ КАРТОЧКИ
-   ========================================================= */
 function createQuestionCard(question, number) {
 
   const card = document.createElement('article');
@@ -167,9 +152,6 @@ function createQuestionCard(question, number) {
   return card;
 }
 
-/* =========================================================
-   6. ВЫБОР ОТВЕТА
-   ========================================================= */
 function chooseAnswer(card, btn) {
   if (state.locked) return;
   if (card.dataset.done === '1') return;
@@ -209,15 +191,12 @@ function chooseAnswer(card, btn) {
       setTimeout(() => {
         finishQuestion(isCorrect);
       }, 500);
-      
+
     }, 500);
 
   }, 3000);
 }
 
-/* =========================================================
-   7. ЗАВЕРШЕНИЕ ВОПРОСА
-   ========================================================= */
 function finishQuestion(isCorrect) {
   state.answered += 1;
   if (isCorrect) state.correct += 1;
@@ -232,9 +211,6 @@ function finishQuestion(isCorrect) {
   }
 }
 
-/* =========================================================
-   8. ПОКАЗ СЛЕДУЮЩЕЙ КАРТОЧКИ
-   ========================================================= */
 function showQuestion(index) {
   const card = state.cards[index];
   if (!card) return;
@@ -244,9 +220,6 @@ function showQuestion(index) {
   updateProgress();
 }
 
-/* =========================================================
-   9. ФИНАЛ
-   ========================================================= */
 function showFinish() {
   state.locked = false;
   quizEl.classList.add('quiz--finished');
@@ -255,9 +228,6 @@ function showFinish() {
   updateProgress();
 }
 
-/* =========================================================
-   10. ПЕРЕКЛЮЧЕНИЕ БЛОКА «ПРАВИЛЬНЫЙ ОТВЕТ»
-   ========================================================= */
 function toggleReveal(reveal) {
   if (state.openReveal && state.openReveal !== reveal) {
     state.openReveal.classList.remove('reveal--open');
@@ -271,9 +241,6 @@ function toggleReveal(reveal) {
   }
 }
 
-/* =========================================================
-   11. ПРОГРЕСС
-   ========================================================= */
 function updateProgress() {
   if (state.finished) {
     progressEl.textContent = `Отвечено: ${state.answered} из ${state.total}`;
@@ -282,9 +249,6 @@ function updateProgress() {
   }
 }
 
-/* =========================================================
-   12. СТАРТ
-   ========================================================= */
 function init() {
   const ordered = shuffle(QUESTIONS);
   state.total = ordered.length;
