@@ -26,7 +26,7 @@ body {
   line-height: 1.6;
 }
 
-/* ================= ШАПКА ================= */
+
 .page-header {
   background: var(--accent);
   color: #fff;
@@ -44,7 +44,7 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
   font-size: 14px;
 }
 
-/* ================= КОНТЕЙНЕР ================= */
+
 .wrapper {
   width: 90%;
   max-width: 1100px;
@@ -52,7 +52,7 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
   padding: 40px 0 55px;
 }
 
-/* ================= ПЛАШКА ФИНАЛА ================= */
+
 .finish {
   background: var(--accent-soft);
   border-left: 4px solid var(--accent);
@@ -71,7 +71,7 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ================= РЯД ВОПРОСОВ ================= */
+
 .quiz {
   display: flex;
   flex-wrap: wrap;
@@ -79,7 +79,7 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
   gap: 22px;
 }
 
-/* ================= КАРТОЧКА ВОПРОСА ================= */
+
 .question {
   display: none;
   flex: 1 1 320px;
@@ -97,7 +97,6 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
 }
 .question--ok  { border-color: var(--ok-border); }
 .question--bad { border-color: var(--bad-border); }
-
 .quiz--finished .question { cursor: pointer; }
 
 @keyframes cardIn {
@@ -105,7 +104,7 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* --- шапка карточки --- */
+
 .question__head {
   display: flex;
   align-items: center;
@@ -135,7 +134,6 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
 }
 .question__mark--ok  { color: var(--ok);  opacity: 1; transform: scale(1) rotate(0); }
 .question__mark--bad { color: var(--bad); opacity: 1; transform: scale(1) rotate(0); }
-
 .question__text {
   margin: 0 0 16px;
   font-size: 16px;
@@ -143,7 +141,7 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
   line-height: 1.5;
 }
 
-/* ================= ОТВЕТЫ ================= */
+
 .question__answers {
   display: flex;
   flex-direction: column;
@@ -221,7 +219,7 @@ h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.2; }
   pointer-events: none;
 }
 
-/* ================= БЛОК «ПРАВИЛЬНЫЙ ОТВЕТ» ================= */
+
 .reveal {
   max-height: 0;
   opacity: 0;

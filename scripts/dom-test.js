@@ -199,19 +199,20 @@ function chooseAnswer(card, btn) {
       ? allAnswers.filter(a => a !== btn)
       : allAnswers;
     
+    if (isCorrect) btn.classList.add('answer--gone');
+
     setTimeout(() => {
       moving.forEach((answer, i) => {
       setTimeout(() => answer.classList.add('answer--down'), i * 250);
       });
-    }, 1000);
-    
-    // Если попросят поменять местами скрытие правильного ответа и смещение неправильных
-    // const totalDelay = moving.length * 250 + 400;
 
-    if (isCorrect) btn.classList.add('answer--gone');
-    finishQuestion(isCorrect);
+      setTimeout(() => {
+        finishQuestion(isCorrect);
+      }, 500);
+      
+    }, 500);
 
-  }, 1200);
+  }, 3000);
 }
 
 /* =========================================================
