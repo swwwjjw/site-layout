@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа №5. Слова</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/words.css">
+    <script src="scripts/words.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">
+            <span class="logo-line"></span>
+            <span class="logo-line logo-line--short"></span>
+            <span class="logo-line logo-line--long"></span>
+            <span class="logo-last-row">
+            <span class="logo-line logo-line--medium"></span>
+            <span class="logo-dot"></span>
+            </span>
+        </span>
+
+        <span class="logo-text">Tasks Hub</span>
+        </a>
+        <nav>
+            <a class="" href="index.html">Главная</a>
+            <a class="" href="tasks.html">Задания</a>
+            <a class="" href="about.html">О сайте</a>
+        </nav>
+    </div>
+</header>
+<main>
+    <section>
+        <div class="container">
+            <a class="back-link" href="tasks.html">← Вернуться к заданиям</a>
+            <h1 class="section-title">Практическая работа №5. Слова</h1>
+            <p class="section-description">Создание парсера слов.</p>
+            <div class="article">
+                <h2>Задание</h2>
+                <p>Реализовать парсинг слов в ассоциативный массив, перенос блоков со словами в разные зоны.</p>
+                <h2>Результат</h2>
+                <div class="words-app">
+                    <!-- Блок 3 (синий) -->
+                    <div class="words-block words-block-3" id="block-3"></div>
+                    
+                    <div class="words-bottom">
+                        <!-- Блок 2 (черный) -->
+                        <div class="words-block words-block-2" id="block-2"></div>
+                        
+                        <!-- Блок 1 (красный) -->
+                        <div class="words-block words-block-1" id="block-1">
+                            <div class="words-controls">
+                                <input type="text" id="words-input" value="строка - по - умолчанию - 1" placeholder="Введите строку...">
+                                <button id="btn-parse">Разобрать</button>
+                                <button id="btn-reset">Сброс</button>
+                            </div>
+                            <div class="block-1-output" id="block-1-output"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <p>Итогом работы является страница с парсингом слов и различными блоками.</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="container footer-inner">
+        <div><strong>Tasks Hub</strong><p class="small">Учебный сайт студента</p></div>
+        <div><p>Практические задания и проекты.</p><p class="small">© 2026 Tasks Hub</p></div>
+    </div>
+</footer>
+</body>
+</html>

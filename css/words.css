@@ -1,0 +1,134 @@
+.words-app {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.words-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.words-controls input {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.words-controls button {
+    padding: 10px 20px;
+    background-color: #3157a4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.words-controls button:hover {
+    background-color: #264583;
+}
+
+.words-block {
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+/* Блок 3 - Синяя рамка */
+.words-block-3 {
+    min-height: 200px;
+    border: 2px solid #222;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+/* Контейнер для Блока 1 и 2 */
+.words-bottom {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+/* Блок 2 - Черная рамка */
+.words-block-2 {
+    border: 2px solid #222;
+    padding: 15px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start; /* Чтобы элементы не растягивались */
+}
+
+/* Блок 1 - Красная рамка */
+.words-block-1 {
+    border: 2px solid #222;
+    padding: 15px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Контейнер для слов внутри Блока 1 */
+.block-1-output {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 8px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+}
+
+/* Стили для перетаскиваемых элементов */
+.word-item {
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: grab;
+    user-select: none;
+    font-family: monospace;
+    font-size: 15px;
+    color: #222;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.1);
+    display: inline-block;
+    white-space: nowrap;
+    box-sizing: border-box; /* Важно для фиксации ширины */
+}
+
+.word-item:active {
+    cursor: grabbing;
+}
+
+/* Стили для элементов в Блоке 3 (серый цвет) */
+.words-block-3 .word-item {
+    background-color: #cccccc !important;
+    position: absolute;
+    z-index: 100;
+}
+
+.words-block-3.drag-over {
+    background-color: #eef2f9;
+}
+
+/* Стили для текста в Блоке 1 */
+.clicked-word {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .words-bottom {
+        grid-template-columns: 1fr;
+    }
+}
